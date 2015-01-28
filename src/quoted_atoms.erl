@@ -66,6 +66,12 @@ handle_call(_Request, _From, State) ->
 handle_cast(_Msg, State) ->
     {noreply,   State}.
 
+good_function() ->
+    [look, all, atoms, are, correct].
+
+bad_function() ->
+    ['that', 'is', a, bad_function].
+
 %%--------------------------------------------------------------------
 %% @private
 %% @doc
