@@ -52,6 +52,9 @@ start_link() ->
 init([]) ->
     {ok, #state{}}.
 
+new_bad_function() ->
+	"<- here's a \t symbol".
+
 %%--------------------------------------------------------------------
 %% @private
 %% @doc
@@ -69,7 +72,8 @@ init([]) ->
 handle_call(_Request, _From, State) ->
     Reply = ok,
     %% VVV That's a trailing space, not an indentation VVV
-    {reply, Reply, State}.	
+    {reply, Reply, State},	
+    changes.
 
 %%--------------------------------------------------------------------
 %% @private
@@ -96,6 +100,9 @@ handle_cast(_Msg, State) ->
 %%--------------------------------------------------------------------
 handle_info(_Info, State) ->
     {noreply, State}.
+
+new_good_function(Foo) ->
+    Foo ++ "Bar".
 
 %%--------------------------------------------------------------------
 %% @private
