@@ -118,6 +118,20 @@ get_flow_blocks([Attr | Attributes], {Opened, Closed} = Defs) ->
             get_flow_blocks(Attributes, Defs)
     end.
 
+my_cool_function() ->
+    %% OMFG, it's an inline comment
+    lists:foreach(
+        fun (It) ->
+            io:format("Just show it to the whole world: ~p", [It])
+        end,
+        [
+            'this atom is ok',
+            'but_not_this',
+            another_ok_atom
+        ]
+	    %%<- Here's a \t
+    ).
+
 %% ===================================================================
 %% EUnit tests
 %% ===================================================================
